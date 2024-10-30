@@ -1,26 +1,57 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <header>
+      <h1>Ton Lance еджен амы</h1>
+      <p>Приветствуем в Telegram мини-приложении!</p>
+    </header>
+    <main>
+      <router-view />
+      <!-- Если используется vue-router для навигации -->
+    </main>
+    <router-link to="/login">Перейти к логину</router-link>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      // Можно добавить базовые данные\
+    };
+  },
+  methods: {
+    
+    initializeApp() {
+      console.log("Приложение Ton Lance запущено!");
+      // Telegram API
+    },
+  },
+  mounted() {
+    this.initializeApp();
+  },
+};
 </script>
 
 <style>
+/* Базовые стили для Telegram мини-приложения */
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+p {
+  color: #666;
 }
 </style>
